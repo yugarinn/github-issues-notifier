@@ -1,0 +1,14 @@
+listeners:
+  - lila:
+      name: 'lila'
+      email_to: 'yugarinn@proton.me'
+      repository_url: 'https://github.com/lichess-org/lila'
+      filters:
+        - 'tag:good first issue'
+
+  - laravel:
+      name: 'laravel'
+      email_to: 'yugarinn@proton.me'
+      repository_url: 'https://github.com/laravel/framework'
+      filters:
+        - 'tag:help wanted'

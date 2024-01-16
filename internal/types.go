@@ -5,20 +5,27 @@ import (
 )
 
 
-type Notification struct {
-	ID             string `bson:"_id"`
-	RepositoryUri  string `bson:"repositoryUri"`
-	Filters        NotificationFilters
-	Email          string `bson:"email"`
-	NotifiedIssues []int64 `bson:"notifiedIssues"`
-	LastCheckAt    time.Time `bson:"lastCheckAt"`
+type ListenersWrapper struct {
+    Listeners []Listener `yaml:"listeners"`
 }
 
-type NotificationFilters struct {
-	Author		string
-	Assignee	string
-	Label 		string
-	Title 		string
+type Listener struct {
+    Name          string            `yaml:"name"`
+    EmailTo       string            `yaml:"email_to"`
+    Repository    string            `yaml:"repository"`
+    IsActive      bool              `yaml:"is_active"`
+    Filters       ListenerFilters `yaml:"filters"`
+}
+
+type ListenerFilters struct {
+	Labels string   `yaml:"labels"`
+	Assignee string `yaml:"assignee"`
+	Author string   `yaml:"author"`
+}
+
+type ListenerTracker struct {
+	LastCheckAt   time.Time
+	TrackedIssues []int64
 }
 
 type GithubIssue struct {

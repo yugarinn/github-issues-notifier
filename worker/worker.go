@@ -11,19 +11,23 @@ import (
 
 	"github.com/yugarinn/github-issues-notificator/core"
 	"github.com/yugarinn/github-issues-notificator/internal"
-	"github.com/yugarinn/github-issues-notificator/lib"
 )
 
 
 func InitiNotificationWorker(app *core.App) {
-	lib.LoadEnvFile()
-
 	c := cron.New()
-	cronFrequency := os.Getenv("WORKER_CRON_FREQUENCY")
+	cronFrequency := app.Config.WorkerFrequency
 
 	cronID, cronError := c.AddFunc(cronFrequency, func() {
 		log.Println("checking for new issues...")
-		internal.SendNotifications(app)
+
+		listeners, err := internal.LoadListeners(app)
+		if err != nil {
+			log.Println("error during listeners file parsing, aborting execution:", err)
+		}
+
+		internal.SendNotifications(app, listeners)
+
 		log.Println("checking for new issues... done")
 	})
 
@@ -40,5 +44,5 @@ func InitiNotificationWorker(app *core.App) {
 	fmt.Println(<-ch)
 
 	c.Stop()
-	log.Println("starting woker... done")
+	log.Println("killing woker... done")
 }

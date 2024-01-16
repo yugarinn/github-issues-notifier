@@ -1,19 +1,17 @@
-DC = docker compose -f docker-compose.yml
+build:
+	docker build -t github-issues-notificator .
 
-up:
-	@${DC} up --build
+build-dev:
+	docker build --build-arg GISN_ENV=development -t github-issues-notificator .
 
-up-prod:
-	@${DC} up --build -d
+run:
+	docker run -d -v .:/github-issues-notificator github-issues-notificator
 
-down:
-	@${DC} down
+stop:
+	docker ps -q --filter "ancestor=github-issues-notificator" | xargs docker stop
 
 shell:
-	@${DC} run --rm -it app bash -l
+	docker exec -it $$(docker ps -q --filter "ancestor=github-issues-notificator" | head -n 1) /bin/bash
 
-test:
-	@${DC} run -e GIN_ENV=test app /go/bin/gotestsum --format testname ./tests/feature
-
-build_for_production:
-	GIN_ENV=production go build
+logs:
+	docker logs $$(docker ps -q --filter "ancestor=github-issues-notificator" | head -n 1)

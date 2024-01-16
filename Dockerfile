@@ -1,19 +1,18 @@
-FROM golang:1.20
+FROM golang:1.21
+
+ARG RIN_ENV
+ARG GOPATH
 
 ENV GOPATH=/go
+ENV RIN_ENV=${RIN_ENV}
 
 RUN mkdir /github-issues-notificator
 WORKDIR /github-issues-notificator
 
 ADD go.mod ./go.mod
 ADD go.sum ./go.sum
-
 ADD . .
 
-ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.10.0/wait /usr/local/bin/wait
-RUN chmod +x /usr/local/bin/wait
 RUN go mod download && go mod verify
 
-EXPOSE 3000
-
-CMD /usr/local/bin/wait && ./setup.sh
+ENTRYPOINT ./setup.sh

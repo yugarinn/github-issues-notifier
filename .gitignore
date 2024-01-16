@@ -3,7 +3,9 @@
 *.log
 tmp/
 
-firebaseServiceAccount.json
 bin/github-issues-notificator
+
+listeners.yml
+listeners.db
 
 .env
