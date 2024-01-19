@@ -1,14 +1,29 @@
 listeners:
-  - lila:
-      name: 'lila'
-      email_to: 'yugarinn@proton.me'
-      repository_url: 'https://github.com/lichess-org/lila'
-      filters:
-        - 'tag:good first issue'
+  - name: 'lila'
+    repository: 'lichess-org/lila'
+    email_to: 'sergiouve@gmail.com'
+    is_active: true
+    filters:
+      labels: 'good first issue'
+      assignee: 'none'
 
-  - laravel:
-      name: 'laravel'
-      email_to: 'yugarinn@proton.me'
-      repository_url: 'https://github.com/laravel/framework'
-      filters:
-        - 'tag:help wanted'
+  - name: 'laravel'
+    repository: 'laravel/framework'
+    email_to: 'sergiouve@gmail.com'
+    is_active: true
+    filters:
+      labels: 'help wanted'
+
+  - name: 'doom'
+    repository: 'doomemacs/doomemacs'
+    email_to: 'sergiouve@gmail.com'
+    is_active: true
+    filters:
+      labels: 'good first issue,help wanted'
+
+  - name: 'rails'
+    repository: 'rails/rails'
+    email_to: 'sergiouve@gmail.com'
+    is_active: true
+    filters:
+      labels: 'good first issue,help wanted'
