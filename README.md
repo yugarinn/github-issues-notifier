@@ -1,6 +1,7 @@
 # Github Issues Notifier 📢
 A daemon process that listens for new issues in Github repositories and notifies about them via email.
-I personally have this running in a Raspberry Pi 4 and use it to monitor Open Source repos that I like to contribute to.
+
+I personally have this running in a Raspberry Pi 4 🫐 and use it to monitor Open Source repos that I like to contribute to.
 
 ## Prerequisites
 - `docker` (but not really, you could also compile the binary)
