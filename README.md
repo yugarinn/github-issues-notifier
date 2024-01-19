@@ -6,7 +6,7 @@ A daemon process that listens for new issues in Github repositories and notifies
 - `make` (but not really, you can just check the contents of the `Makefile` and use `docker` directly)
 
 ## Installation
-This is intented to be used as a Docker container, although it could also be compiled and run as a standalone Go binary using something like `systemd`.
+This is intended to be used as a Docker container, although it could also be compiled and run as a standalone Go binary using something like `systemd`.
 
 1. Clone this repository
 ``` bash
@@ -78,7 +78,7 @@ Since you need to **bring your own SMTP server**, the following variables MUST b
 
 The following variables are optional:
 - `WORKER_CRON_FREQUENCY` defaults to `"*/30 * * * *"` (at every 30th minute)
-- `LISTENERS_FILE_PATH` Where the configuration file defining the listeners is located. Defaults to `"./listener.yml"`.
+- `LISTENERS_FILE_PATH` Where the configuration file defining the listeners is located. Defaults to `"./listeners.yml"`.
 - `LISTENERS_DATABASE_PATH` Where the database file (this uses `bbolt` under the hood) is located. This database is needed jsut to keep track of the already notified issues, nothing fancy really. Defaults to `"./listener.db"`
 
 ## Contributing
