@@ -7,7 +7,7 @@ import (
 	"slices"
 	"time"
 
-	"github.com/yugarinn/github-issues-notificator/core"
+	"github.com/yugarinn/github-issues-notifier/core"
 
 	bolt "go.etcd.io/bbolt"
 )

@@ -3,7 +3,7 @@ package internal
 import (
 	"io/ioutil"
 
-	"github.com/yugarinn/github-issues-notificator/core"
+	"github.com/yugarinn/github-issues-notifier/core"
 
 	"gopkg.in/yaml.v3"
 )

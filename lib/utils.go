@@ -8,7 +8,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-const projectDirName = "github-issues-notificator"
+const projectDirName = "github-issues-notifier"
 
 func LoadEnvFile() {
 	projectName := regexp.MustCompile(`^(.*` + projectDirName + `)`)

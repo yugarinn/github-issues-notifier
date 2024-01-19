@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/yugarinn/github-issues-notificator/core"
-	"github.com/yugarinn/github-issues-notificator/lib"
-	"github.com/yugarinn/github-issues-notificator/worker"
+	"github.com/yugarinn/github-issues-notifier/core"
+	"github.com/yugarinn/github-issues-notifier/lib"
+	"github.com/yugarinn/github-issues-notifier/worker"
 )
 
 

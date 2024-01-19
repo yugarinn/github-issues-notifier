@@ -1,4 +1,4 @@
-module github.com/yugarinn/github-issues-notificator
+module github.com/yugarinn/github-issues-notifier
 
 go 1.21
 

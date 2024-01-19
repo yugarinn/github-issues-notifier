@@ -6,8 +6,8 @@ ARG GOPATH
 ENV GOPATH=/go
 ENV RIN_ENV=${RIN_ENV}
 
-RUN mkdir /github-issues-notificator
-WORKDIR /github-issues-notificator
+RUN mkdir /github-issues-notifier
+WORKDIR /github-issues-notifier
 
 ADD go.mod ./go.mod
 ADD go.sum ./go.sum

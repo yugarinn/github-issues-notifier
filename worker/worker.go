@@ -9,8 +9,8 @@ import (
 
 	"github.com/robfig/cron/v3"
 
-	"github.com/yugarinn/github-issues-notificator/core"
-	"github.com/yugarinn/github-issues-notificator/internal"
+	"github.com/yugarinn/github-issues-notifier/core"
+	"github.com/yugarinn/github-issues-notifier/internal"
 )
 
 

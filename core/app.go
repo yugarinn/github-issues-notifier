@@ -1,8 +1,8 @@
 package core
 
 import (
-	"github.com/yugarinn/github-issues-notificator/config"
-	"github.com/yugarinn/github-issues-notificator/lib"
+	"github.com/yugarinn/github-issues-notifier/config"
+	"github.com/yugarinn/github-issues-notifier/lib"
 )
 
 
