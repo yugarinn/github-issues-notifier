@@ -35,7 +35,7 @@ $ make stop
 ```
 
 ## Configuration
-The notifier relies on a `yml` file to define which repositories it should listen to:
+The notifier relies on a `yml` file to define which repositories it should listen to. This is an example configuration file:
 ``` yaml
 listeners:
   - name: 'lila'
