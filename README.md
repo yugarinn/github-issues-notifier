@@ -2,8 +2,9 @@
 A daemon process that listens for new issues in Github repositories and notifies about them via email.
 
 ## Prerequisites
-- `docker`
+- `docker` (but not really, you could also compile the binary)
 - `make` (but not really, you can just check the contents of the `Makefile` and use `docker` directly)
+- `go 1.21+` (but not really, only if you decide not to use `docker`)
 
 ## Installation
 This is intended to be used as a Docker container, although it could also be compiled and run as a standalone Go binary using something like `systemd`.
