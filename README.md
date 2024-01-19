@@ -1,4 +1,4 @@
-# GitHub Issue Notifier 📢
+# Github Issues Notifier 📢
 A daemon process that listens for new issues in Github repositories and notifies about them via email.
 
 ## Prerequisites
@@ -19,7 +19,7 @@ $ cd github-issues-notifier
 $ make run
 ```
 
-Also, it is possible to:
+It is also possible to:
 
 3. Check the logs:
 
