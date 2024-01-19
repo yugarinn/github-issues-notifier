@@ -69,7 +69,7 @@ Each listener is composed of:
 
 Only the issues that match the defined filters in each listener are taken into account. Also, keep in mind that just label filters are implemented.
 
-## Configuration
+### Environment variables
 Since you need to **bring your own SMTP server**, the following variables MUST be defined in a `.env` file in the root folder of the project:
 - `SMTP_HOST`
 - `SMTP_PORT`
