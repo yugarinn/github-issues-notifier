@@ -29,11 +29,6 @@ func sendIssueEmailAlertTo(listener Listener, issue GithubIssue) error {
 
 	body := header + "\r\n" + buildAlertEmailBody(listener, issue)
 
-	send := true
-	if !send {
-		return nil
-	}
-
 	err := smtp.SendMail(smtpHost + ":" + smtpPort, smtpAuth, smtpFrom, []string{listener.EmailTo}, []byte(body))
 	if err != nil {
 		log.Fatal("Error sending email: ", err)

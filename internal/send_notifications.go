@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"os"
 	"slices"
 	"time"
 
@@ -16,7 +17,8 @@ import (
 const BOLT_BUCKET_NAME = "listeners"
 
 func SendNotifications(app *core.App, listeners []Listener) {
-	db, err := bolt.Open("listeners.db", 0600, nil)
+	databaseName := os.Getenv("LISTENERS_DATABASE_PATH")
+	db, err := bolt.Open(databaseName, 0600, nil)
 	if err != nil {
 		log.Fatal(err)
 	}

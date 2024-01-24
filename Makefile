@@ -2,7 +2,7 @@ run:
 	docker build -t github-issues-notifier . && docker run -d -v .:/github-issues-notifier github-issues-notifier
 
 run-dev:
-	docker build --build-arg GISN_ENV=development -t github-issues-notifier . && docker run -d -v .:/github-issues-notifier github-issues-notifier
+	docker build --build-arg GISN_ENV=development -t github-issues-notifier . && docker run -v .:/github-issues-notifier github-issues-notifier
 
 stop:
 	docker ps -q --filter "ancestor=github-issues-notifier" | xargs docker stop
